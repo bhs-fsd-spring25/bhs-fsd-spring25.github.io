@@ -3,7 +3,9 @@ body {
 }
 
 canvas {
-  background-color: lightblue;
+  /* background-color: rgb(33, 48, 53); */
+  background-image: url("images/dragon.jpg");
+  background-size: cover;
   margin: 20px;
 }
 
