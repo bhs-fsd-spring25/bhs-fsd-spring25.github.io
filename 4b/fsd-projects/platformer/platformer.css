@@ -3,7 +3,8 @@ body {
 }
 
 canvas {
-  background-color: lightblue;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/022/337/416/large_2x/basketball-background-illustration-ai-generative-free-photo.jpg");
+  background-size: cover;
   margin: 20px;
 }
 
