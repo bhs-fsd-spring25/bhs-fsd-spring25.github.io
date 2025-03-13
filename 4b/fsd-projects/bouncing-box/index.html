@@ -7,21 +7,32 @@
 	<script src="jquery.min.js"></script>
 	<style>
 		.box {
-			width: 70px;
-			height: 70px;
-			background-color: teal;
-			font-size: 300%;
-			text-align: center;
+			width: 140px;
+			height: 140px;	
+			/* background-color: teal; */		
+			font-size: 625%;			
+			text-align: center ;
 			user-select: none;
-			display: block;
+			display: block ;
 			position: absolute;
 			top: 100px;
 			/* Change me! */
 			left: 0px;
+
+		/* Challenge 1 below here */
+			color: white;
+			text-shadow: black 1px 0 10px;
+			font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+			background-image: url("https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png");
+			background-size: cover;
+			filter: drop-shadow(0 0 2px black);
+			
 		}
 
 		.board {
 			height: 100vh;
+			background-image: url("https://seatgeekimages.com/seatviews/smoothie-king-center-section-102-floor/11868983-07e6-4b07-9e1b-bee42f4afb9f/flat/2448x1158.jpg?auto=webp&width=3840&quality=75");
+			background-size: cover;
 		}
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
@@ -44,6 +55,9 @@
 			var box = jQuery('.box');	// reference to the HTML .box element
 			var board = jQuery('.board');	// reference to the HTML .board element
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
+			
+			// Challenge 2
+			var boardHeight = board.height();	// the maximum Y-Coordinate of the screen
 
 			// Every 50 milliseconds, call the update Function (see below)
 			setInterval(update, 50);
@@ -52,8 +66,9 @@
 			box.on('click', handleBoxClick);
 
 			// moves the Box to a new position on the screen along the X-Axis
-			function moveBoxTo(newPositionX) {
+			function moveBoxTo(newPositionX, newPositionY) {
 				box.css("left", newPositionX);
+				box.css("top", newPositionY);
 			}
 
 			// changes the text displayed on the Box
@@ -66,9 +81,11 @@
 			//////////////////////////////////////////////////////////////////
 
 			// TODO 2 - Variable declarations 
-			var positionX = 0; // TODO 2
-			var points = 0; // TODO 4
-			var speed = 10; // TODO 5
+			var positionX = 0; 
+			var positionY = 0; // Challenge 2
+			var points = 0; 
+			var speedX = 3; // Challenge 2
+			var speedY = 20; // Challenge 2
 
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
@@ -77,18 +94,22 @@
 			*/
 			function update() {
 
-				// TODO 6
-				if (positionX > boardWidth) {
-					speed *= -1;
-				}
-
-				// TODO 7
+				// Challenge 2
+				if (positionX > boardWidth - (box.width() / 2)) {
+					speedX *= -1;
+				};
 				if (positionX < 0) {
-					speed *= -1;
-				}
-
-				positionX += speed; // TODO 5
-				moveBoxTo(positionX); // TODO 1
+					speedX *= -1;
+				};			
+				if (positionY > boardHeight - (box.height() / 2) ) {
+					speedY *= -1;
+				};
+				if (positionY < 0) {
+					speedY *= -1;
+				};
+				positionX += speedX;
+				positionY += speedY;
+				moveBoxTo(positionX, positionY);
 			};
 
 			/* 
@@ -97,11 +118,12 @@
 			the left side of the screen.
 			*/
 			function handleBoxClick() {
-				positionX = 0; // TODO 3
-				points++; // TODO 4
-				changeBoxText(points); // TODO 4
-				// speed += 3; // TODO 5
-				speed = 3 * points + 10; // TODO 8
+				// Challenge 3
+				positionX = Math.random() * (boardWidth - box.width());
+				positionY = 0;
+				points++;
+				changeBoxText(points);
+				speedX = 3 * points + 10;
 			};
 
 
