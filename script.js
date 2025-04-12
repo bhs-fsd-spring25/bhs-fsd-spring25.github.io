@@ -216,12 +216,17 @@ const roster4 = addNamesAndUsers(names4, users4, 4);
 const content = $(".content");
 
 const load = (content, roster) => {
-  content.append(`<div class="block" id="block${roster[0].block}"></div>`);
-  const block = $(`#block${roster[0].block}`);
+  
+  content.append(`
+    <div class="block" id="block${roster[0].block}">
+      <h3>Block ${roster[0].block}</h3>
+    </div>`);
+    const block = $(`#block${roster[0].block}`);
   for (var i = 0; i < roster.length; i++) {
   const student = `
   <div class="student">
-    <h3>${roster[i].name} (<a href="https://github.com/${roster[i].user}" target="_blank">${roster[i].user}</a>)</h3>
+    <h4>${roster[i].name}</h4>
+    <a href="https://github.com/${roster[i].user}" target="_blank"><i class="fa fa-github" style="font-size:24px"></i> ${roster[i].user}</a>
     <ul id="projects">
       <li><a href="${roster[i].projects.website}" target="_blank">First Website</a></li>
       <li><a href="${roster[i].projects.portfolio}" target="_blank">Portfolio</a></li>
@@ -236,3 +241,6 @@ const load = (content, roster) => {
 
 
 load(content, roster2);
+load(content, roster3);
+load(content, roster4);
+
