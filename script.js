@@ -188,7 +188,7 @@ const users4 = [
 const addNamesAndUsers = (namesArray, usersArray, block) => {
   const objectsArray = [];
   for (let i = 0; i < namesArray.length; i++) {  
-    const websitePath = `https://${usersArray[i]}.github.io`;
+    const websitePath = `${usersArray[i]}.github.io`;
     const portfolioPath = `${websitePath}/portfolio.html`;
     const platformerPath = `${websitePath}/fsd-projects/platformer/`;
     const bouncingBoxPath = `${websitePath}/fsd-projects/bouncing-box/`;
@@ -226,13 +226,13 @@ const load = (content, roster) => {
   const student = `
   <div class="student">
     <h4>${roster[i].name}</h4>
-    <a href="https://github.com/${roster[i].user}" target="_blank"><i class="fa fa-github" style="font-size:24px"></i> ${roster[i].user}</a>
+    <a href="https://github.com/${roster[i].user}/${roster[i].projects.website}" target="_blank"><i class="fa fa-github" style="font-size:24px"></i> ${roster[i].user}</a>
     <ul id="projects">
-      <li><a href="${roster[i].projects.website}" target="_blank">First Website</a></li>
-      <li><a href="${roster[i].projects.portfolio}" target="_blank">Portfolio</a></li>
-      <li><a href="${roster[i].projects.platformer}" target="_blank">Platformer</a></li>
-      <li><a href="${roster[i].projects.bouncingBox}" target="_blank">Bouncing Box</a></li>
-      <li><a href="${roster[i].projects.circularity}" target="_blank">Circularity</a></li>
+      <li><a href="https://${roster[i].projects.website}" target="_blank">First Website</a></li>
+      <li><a href="https://${roster[i].projects.portfolio}" target="_blank">Portfolio</a></li>
+      <li><a href="https://${roster[i].projects.platformer}" target="_blank">Platformer</a></li>
+      <li><a href="https://${roster[i].projects.bouncingBox}" target="_blank">Bouncing Box</a></li>
+      <li><a href="https://${roster[i].projects.circularity}" target="_blank">Circularity</a></li>
     </ul>
   </div>`;
   block.append(student);
