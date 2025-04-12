@@ -1,0 +1,96 @@
+body {
+    background: rgb(240, 240, 240);
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    font-family: Arial, sans-serif;
+}
+
+#all-contents {
+    max-width: 800px;
+    margin: auto;
+}
+
+/* navigation menu */
+nav {
+    background: rgb(4, 59, 0);
+    margin: 0 auto;
+    display: flex;
+    padding: 10px;
+}
+
+h1 {
+    display: flex;
+    align-items: center;
+    color: white;
+    flex: 1;
+    margin: 0;
+}
+
+#nav-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-li {
+    display: inline-block;
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #2bff00;
+}
+
+/* main container area beneath menu */
+main {
+    background: rgb(42, 42, 42);
+    display: flex;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.content {
+    flex: 1;
+    padding: 15px;
+}
+
+.content h1 {
+    color: rgb(255, 255, 255);
+  }
+
+.student {
+    background-color: rgb(146, 146, 146);
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+h2, h3 {
+    margin: 0px;
+}
+
+  #projects {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  #projects li {
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    background-color: #b1b1b1;
+  }
+  
+  #projects a {
+    text-decoration: none;
+    color: #033300;
+  }
+
+  #projects a:hover {
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  
