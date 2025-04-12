@@ -6,7 +6,7 @@ body {
 }
 
 #all-contents {
-    max-width: 820px;
+    max-width: 900px;
     margin: auto;
 }
 
@@ -55,6 +55,7 @@ main {
     padding: 10px;
     border-radius: 10px;
     text-align: center;
+    width: 260px;
 }   
 .content {
     flex: 1;
